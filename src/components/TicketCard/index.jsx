@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
-const TicketCard = ({ id, name, price, features, buttonText = "Comprar Tickets" })=> {
+const TicketCard = ({ name, price, features, buttonText = "Comprar Tickets" })=> {
   const navigate = useNavigate()
 
   const handleBuyTickets = ()=> {
@@ -12,8 +13,8 @@ const TicketCard = ({ id, name, price, features, buttonText = "Comprar Tickets" 
       <h3 className="font-title text-2xl mb-4">{name}</h3>
       <p className="text-5xl font-title font-bold mb-4">{price}</p>
       <ul className="font-body italic text-center mb-4">
-        {features.map((feature) => (
-          <li key={id} className="mb-2">- {feature}</li>
+        {features.map((feature, index) => (
+          <li key={index} className="mb-2">- {feature}</li>
         ))}
       </ul>
       <button
@@ -24,6 +25,13 @@ const TicketCard = ({ id, name, price, features, buttonText = "Comprar Tickets" 
       </button>
     </div>
   )
-}
+};
 
-export default TicketCard
+TicketCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  features: PropTypes.arrayOf(PropTypes.string).isRequired,
+  buttonText: PropTypes.string,
+};
+
+export default TicketCard;

@@ -33,15 +33,15 @@ const testimonialsData = [
 
 const TestimonialsSection = ()=> {
   return (
-    <section id="testimonials" className="w-full py-20 bg-gradient-to-t from-night to-liliac-dark flex flex-col items-center">
-      <h2 className="font-title text-5xl text-pumpkin mb-10 drop-shadow-lg">Testimonios</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8 max-w-6xl">
+    <section id="testimonials" className="w-full py-12 bg-gradient-to-t from-night to-liliac-dark flex flex-col items-center">
+      <h2 className="font-title text-3xl md:text-5xl text-pumpkin mb-6 drop-shadow-lg">Testimonios</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 max-w-[90%] mx-auto">
         {testimonialsData.map((testimonial)=> (
           <div
             key={testimonial.id}
-            className="bg-gray-800 p-6 rounded-lg shadow-lg text-white flex flex-col items-center"
+            className="bg-gray-800 p-4 rounded-lg shadow-lg text-white flex flex-col items-center"
           >
-            <p className="italic text-center mb-4">{testimonial.text}</p>
+            <p className="italic text-center mb-2">{testimonial.text}</p>
             <p className="text-amber-400 font-semibold">{testimonial.name}</p>
           </div>
         ))}
